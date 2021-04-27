@@ -2,8 +2,8 @@
 
 Backend - Matt / Josh
 
-Frontend (HTML / CSS) - Sean / Shubham / Kristofer
+Frontend - Daniel / Sean / Shubham / Kristofer
 
-Frontend (JavaScript) - Daniel / Shubham / Kristofer
+
 
 
