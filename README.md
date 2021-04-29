@@ -2,7 +2,7 @@
 
 Backend - Matt / Josh
 
-Frontend - Daniel / Sean / Shubham / Kristofer
+Frontend - Daniel / Sean / Shubham / Kristofer / David
 
 
 
