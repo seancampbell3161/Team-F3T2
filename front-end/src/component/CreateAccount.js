@@ -1,22 +1,16 @@
 
-function LoginPage() {
+function CreateAccountPage() {
     return (
       <div className="fpContainer">
 
         <header>
           <nav class="main-nav">
-            <h3><a href="/FrontPage.js">Team 3FT2 Social Network</a></h3>
-            
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">New Post</a></li>
-            </ul>
-
+            <h3>Team 3FT2 Social Network</h3>
+            <span>Tagline here</span>
           </nav>         
         </header>
 
-        <h2>Login</h2>
+        <h2>Create Account</h2>
         <div class="formContainer">
           <form class="fpForm">
             <div class="formTop">
@@ -33,4 +27,4 @@ function LoginPage() {
     );
   }
   
-  export default LoginPage;
+  export default CreateAccountPage;
