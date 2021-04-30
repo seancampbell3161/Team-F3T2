@@ -1,6 +1,8 @@
 import React from "react"
 import './App.css';
 import LoginPage from './component/LoginPage';
+import axios from "axios"
+import AccountPage from "./component/AccountPage"
 
 function App() {
 
@@ -12,10 +14,14 @@ function App() {
       .then((data) => setData(data.message));
   }, []);
 
+  function postCreator(){
+    axios.post("/createPost")
+  }
+
   return (
     <div>
-      <LoginPage></LoginPage>
-      <p>{!data ? "Loading..." : data}</p>
+      <AccountPage></AccountPage>
+      <button onClick={postCreator}>click</button>
     </div>
   )}
 
