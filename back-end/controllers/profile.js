@@ -3,7 +3,7 @@ const Imgs = require("../models/imgs")
 module.exports = {
     getProfile: async (req,res)=>{
         try{
-            const imgFile = await Imgs.findOne({microsoftId: req.user.microsoftId})
+            const imgFile = await Imgs.find({microsoftId: req.user.microsoftId})
             res.render('profile.ejs', {user:req.user, imgs: imgFile})
         }catch(err){
             console.log(err)
@@ -20,7 +20,14 @@ module.exports = {
       } catch (err) {
         console.log(err)
       }
+    },
+    deletePost: async (req, res)=>{
+        try{
+            await Imgs.findOneAndDelete({_id:req.body.postIdFromJSFile})
+            console.log('Deleted post')
+            res.json('Deleted It')
+        }catch(err){
+            console.log(err)
+        }
     }
-  }
-
-// , imgs: imgs
+}

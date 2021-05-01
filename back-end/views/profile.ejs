@@ -8,8 +8,15 @@
 </head>
 <body>
     <h1><%= user.displayName %>'s Profile</h1>
-    <p><%= imgs.filename %></p>
-    <img src= <%= "/uploads/images/" + imgs.filename %>  alt="">
+    <% if(imgs != null) { %>
+      <p><%= imgs.filename %></p>
+      <% imgs.forEach( el => { %>
+          <li data-id="<%= el._id %>">
+            <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+            <button class="del" type="button" name="button">Delete</button>
+          </li>
+      <% }) %>
+    <% } %>
     <form class="uploadedImg" action= "/profile/upload" method="POST" enctype="multipart/form-data">
       <input type="file" id="myFile" name="photo" accept="image/*">
       <input type="submit" value="upload">
