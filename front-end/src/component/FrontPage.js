@@ -18,15 +18,15 @@ function FrontPage() {
           <section class="main-feed">
               <div class="main-container">
                   <div class="main-post">
-                          <img src="" alt="pic" class="img-fluid">
+                          <img src="" alt="pic" class="img-fluid"/>
                   </div>
 
                   <div class="main-post">
-                          <img src="" alt="pic2" class="img-fluid">       
+                          <img src="" alt="pic2" class="img-fluid"/>       
                   </div>
 
                   <div class="main-post">  
-                      <img src="" alt="pic3" class="img-fluid">
+                      <img src="" alt="pic3" class="img-fluid"/>
                   </div>
               </div>
               
