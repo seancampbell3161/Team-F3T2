@@ -7,7 +7,7 @@ const upload = multer({dest: "public/uploads/images"})
 
 router.get('/', ensureAuth, profileController.getProfile)
 router.post("/upload", upload.single('photo'), profileController.createPost)
-router.put("/addLike", profileController.addLike)
+router.put("/updateLike", profileController.updateLike)
 router.delete("/deletePost", profileController.deletePost)
 
 module.exports = router
