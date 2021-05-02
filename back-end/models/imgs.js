@@ -12,6 +12,10 @@ const ImgSchema = new mongoose.Schema({
   like: {
     type: Number,
     required: true,
+  },
+  liked: {
+    type: Boolean,
+    required: true,
   }
 })
 
