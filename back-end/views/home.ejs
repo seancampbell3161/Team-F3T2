@@ -9,6 +9,13 @@
 <body>
     <h1>Home</h1>
     <p>Hi <%= user.displayName %>!</p>
+    <% if(imgs != null) { %>
+      <% imgs.forEach( el => { %>
+          <li data-id="<%= el._id %>">
+            <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+          </li>
+      <% }) %>
+    <% } %>
     <a href="/profile">Go to Profile</a>
     <a href="../auth/logout">Logout</a>
     <script src="js/main.js"></script>

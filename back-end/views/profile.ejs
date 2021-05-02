@@ -7,14 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/homepage">Homepage</a>
     <h1><%= user.displayName %>'s Profile</h1>
     <% if(imgs != null) { %>
-      <p><%= imgs.filename %></p>
       <% imgs.forEach( el => { %>
-          <li data-id="<%= el._id %>">
+          <div data-id="<%= el._id %>" data-like="<%= el.like %>">
             <img src="<%= "/uploads/images/" + el.filename %>" alt="">
-            <button class="del" type="button" name="button">Delete</button>
-          </li>
+            <span>Likes: <%= el.like %></span>
+            <button class="like" type="button"><3</button>
+            <button class="del" type="button">Delete</button>
+          </div>
       <% }) %>
     <% } %>
     <form class="uploadedImg" action= "/profile/upload" method="POST" enctype="multipart/form-data">

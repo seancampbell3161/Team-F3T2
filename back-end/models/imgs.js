@@ -8,6 +8,10 @@ const ImgSchema = new mongoose.Schema({
   filename: {
     type: String,
     required: true,
+  },
+  like: {
+    type: Number,
+    required: true,
   }
 })
 
