@@ -1,13 +1,13 @@
 import React from "react"
 import './App.css';
 
-import AccountPage from "./component/AccountPage"
+import LandingPage from "./component/LandingPage"
 
 function App() {
 
   return (
     <div>
-      <AccountPage></AccountPage>
+      <LandingPage></LandingPage>
     </div>
   )}
 
