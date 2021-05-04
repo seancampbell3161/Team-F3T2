@@ -1,0 +1,146 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+*{
+  Font-size: 1em;
+  list-style: none;
+}
+
+/* .main-nav * {
+  list-style:none;
+} */
+
+/* Clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+ clear: both;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+header {
+  height: 7vh;
+  background: #ffc996;
+}
+
+.main-nav {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+nav span {
+  position: absolute;
+  right: 15%;
+}
+
+header li {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+header li:first-child {
+  position: absolute;
+  left: 3%;
+}
+
+header li:last-child {
+  position: absolute;
+  right: 3%;
+}
+a {
+  color: #583d72;
+  text-decoration: none;
+}
+
+
+
+/* *********************
+Boxes
+******************** */
+.whole {
+
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+  color: #583d72;
+}
+
+.addimage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#imagehere {
+  height: 30rem;
+  background-color: #ffc996;
+  border: 3px solid #583d72;
+  border-width: thick;
+  border-radius: 3px;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 3rem;
+}
+
+.addcomment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+input {
+  background-color: #ffc996;
+  font-weight: bold;
+  font-style: italic;
+}
+
+button {
+  background-color: #583d72;
+}
+
+h1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+  color: #583d72;
+}
+
+body {
+  background-color: #ff8474;
+}
