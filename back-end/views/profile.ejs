@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="css/profile.css" media="screen"/>
+</head>
+<header>
+    <nav class="main-nav">
+      <ul>
+          <li><a href="/homepage">Team 3FT2 Social Network</a></li>
+          <li><a href="/homepage">Home</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/profile">New Post</a></li>
+          <li><a href="../auth/logout">Logout</a></li>
+      </ul>
+    </nav>
+</header>
+<body>
+  <section>
+  <h1><%= user.displayName %>'s Profile</h1>
+  <!-- empty section where image will show up (js) -->
+  <section id="imagehere">
+    <% if(imgs != null) { %>
+      <% imgs.forEach( el => { %>
+          <div data-id="<%= el._id %>" data-like="<%= el.like %>">
+            <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+            <span>Likes: <%= el.like %></span>
+            <button class="like" type="button"><3</button>
+            <button class="del" type="button">Delete</button>
+          </div>
+      <% }) %>
+    <% } %>
+  </section>
+  </section>
+
+
+  <section class="whole">
+  <!-- will have the h1 post here -->
+  <section class="text">
+    <h2>Post Your Image Here</h2>
+  </section>
+
+  <!-- will have the button and search bar that will show file name -->
+  <section class="addimage">
+    <!-- <input type="text" placeholder="Add Picture">
+    <button type="button" name="button">Select File</button> -->
+    <form class="uploadedImg" action= "/profile/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" id="myFile" name="photo" accept="image/*">
+      <input type="submit" value="upload">
+    </form>
+  </section>
+
+
+  <!-- add comment and button -->
+  <section class="addcomment">
+    <input type="text" placeholder="Add Comment">
+    <button type="button" name="button">Add Comment</button>
+  </section>
+
+</section>
+
+    <script src="js/main.js"></script>
+  <!-- <script type="text/javascript" src="js/main.js"></script> -->
+</body>
+<!-- <body>
+    <a href="/homepage">Homepage</a>
+    <h1><%= user.displayName %>'s Profile</h1>
+    <% if(imgs != null) { %>
+      <% imgs.forEach( el => { %>
+          <div data-id="<%= el._id %>" data-like="<%= el.like %>">
+            <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+            <span>Likes: <%= el.like %></span>
+            <button class="like" type="button"><3</button>
+            <button class="del" type="button">Delete</button>
+          </div>
+      <% }) %>
+    <% } %>
+    <form class="uploadedImg" action= "/profile/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" id="myFile" name="photo" accept="image/*">
+      <input type="submit" value="upload">
+    </form>
+    <a href="../auth/logout">Logout</a>
+    <script src="js/main.js"></script>
+</body> -->
+</html>
