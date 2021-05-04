@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="screen"/>
 </head>
 <body>
     <h1>Home</h1>
     <p>Hi <%= user.displayName %>!</p>
-    <% if(imgs != null) { %>
-      <% imgs.forEach( el => { %>
-          <li data-id="<%= el._id %>">
-            <img src="<%= "/uploads/images/" + el.filename %>" alt="">
-          </li>
-      <% }) %>
-    <% } %>
+    <div class="main-feed">
+      <% if(imgs != null) { %>
+        <% imgs.forEach( el => { %>
+            <div data-id="<%= el._id %>">
+              <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+            </div>
+        <% }) %>
+      <% } %>
+    </div>
     <a href="/profile">Go to Profile</a>
     <a href="../auth/logout">Logout</a>
     <script src="js/main.js"></script>
