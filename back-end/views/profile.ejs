@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/homepage">Homepage</a>
+    <h1><%= user.displayName %>'s Profile</h1>
+    <% if(imgs != null) { %>
+      <% imgs.forEach( el => { %>
+          <div data-id="<%= el._id %>" data-like="<%= el.like %>">
+            <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+            <span>Likes: <%= el.like %></span>
+            <button class="like" type="button"><3</button>
+            <button class="del" type="button">Delete</button>
+          </div>
+      <% }) %>
+    <% } %>
+    <form class="uploadedImg" action= "/profile/upload" method="POST" enctype="multipart/form-data">
+      <input type="file" id="myFile" name="photo" accept="image/*">
+      <input type="submit" value="upload">
+    </form>
+    <a href="../auth/logout">Logout</a>
+    <script src="js/main.js"></script>
+</body>
+</html>
