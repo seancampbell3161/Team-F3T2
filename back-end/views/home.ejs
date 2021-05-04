@@ -8,9 +8,41 @@
     <link rel="stylesheet" type="text/css" href="css/index.css" media="screen"/>
 </head>
 <body>
-    <h1>Home</h1>
-    <p>Hi <%= user.displayName %>!</p>
-    <div class="main-feed">
+
+    
+    <header>
+      <nav class="main-nav">      
+        <ul>
+            <li><h3>Team 3FT2 Social Network</h3></li>
+            <li><a href="/homepage">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/profile">New Post</a></li>
+            <li><a href="../auth/logout">Logout</a></li>
+        </ul>        
+      </nav>
+      <p>Hi <%= user.displayName %>!</p>         
+  </header>
+
+  <main>
+      <section class="main-feed">
+          <div class="main-container">
+              <div class="main-post">
+                <% if(imgs != null) { %>
+                  <% imgs.forEach( el => { %>
+                      <div data-id="<%= el._id %>">
+                        <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+                      </div>
+                  <% }) %>
+                <% } %>
+              </div>
+
+              
+          </div>
+          
+      </section>
+  </main>
+
+    <!-- <div class="main-feed">
       <% if(imgs != null) { %>
         <% imgs.forEach( el => { %>
             <div data-id="<%= el._id %>">
@@ -18,9 +50,9 @@
             </div>
         <% }) %>
       <% } %>
-    </div>
-    <a href="/profile">Go to Profile</a>
-    <a href="../auth/logout">Logout</a>
+    </div> -->
+    
+    
     <script src="js/main.js"></script>
 </body>
 </html>
