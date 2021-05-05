@@ -11,7 +11,7 @@ module.exports = {
     },
     createPost: async (req, res) => {
       try {
-        await Imgs.create({microsoftId: req.user.microsoftId, filename: req.file.filename, like: 0})
+        await Imgs.create({microsoftId: req.user.microsoftId, filename: req.file.filename, like: 0, liked: false})
         if(req.file) {
           console.log(req.file.filename)
           res.redirect("/profile")

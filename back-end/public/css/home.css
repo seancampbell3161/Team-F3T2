@@ -81,18 +81,6 @@ Boxes
 
 }
 
-.pass {
-  
-}
-
-.black {
-  color: #000000;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
 .text {
   display: flex;
   flex-direction: column;
@@ -135,6 +123,11 @@ img {
   padding: 0.3rem;
 }
 
+.post-controls {
+  align-items: flex-end;
+  margin: 0.3rem 1rem;
+}
+
 .addcomment {
   display: flex;
   flex-direction: row;
@@ -152,15 +145,6 @@ input {
 button {
   background-color: #583d72;
   color: #000000;
-}
-
-.post-controls {
-  align-items: flex-end;
-  margin: 0.3rem 1rem;
-}
-
-.post-controls button:last-of-type {
-  margin-left: 2rem;
 }
 
 h1{
