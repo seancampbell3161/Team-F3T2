@@ -16,6 +16,10 @@ const ImgSchema = new mongoose.Schema({
   liked: {
     type: Boolean,
     required: true,
+  },
+  caption: {
+    type: String,
+    required: false,
   }
 })
 
