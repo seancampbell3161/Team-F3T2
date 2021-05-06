@@ -25,8 +25,11 @@
       <section id="imagehere">
         <% if(imgs != null) { %>
           <% imgs.forEach( el => { %>
-            <div class="data" data-id="<%= el._id %>" data-like="<%= el.like %>">
-              <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+            <div class="data center column" data-id="<%= el._id %>" data-like="<%= el.like %>">
+              <img class="img-size" src="<%= "/uploads/images/" + el.filename %>" alt="">
+              <% if(el.caption) { %>
+                <p class="caption"><%= el.caption %></p>
+              <% } %>
               <div class="post-controls">
                 <span>Likes: <%= el.like %></span>
                 <button class="like" type="button"><3</button>
