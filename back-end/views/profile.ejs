@@ -26,8 +26,11 @@
       <section class="<%= imgs.length >= 1 ? "pass" : "hidden" %>" id="imagehere">
         <% if(imgs.length >= 1) { %>
           <% imgs.forEach( el => { %>
-              <div class="data" data-id="<%= el._id %>" data-like="<%= el.like %>">
-                <img src="<%= "/uploads/images/" + el.filename %>" alt="">
+              <div class="data center column" data-id="<%= el._id %>" data-like="<%= el.like %>">
+                <img class="img-size" src="<%= "/uploads/images/" + el.filename %>" alt="">
+                <% if(el.caption) { %>
+                  <p class="caption"><%= el.caption %></p>
+                <% } %>
                 <div class="post-controls">
                   <span>Likes: <%= el.like %></span>
                   <button class="like" type="button"><3</button>
@@ -51,8 +54,9 @@
       <!-- <input type="text" placeholder="Add Picture">
       <button type="button" name="button">Select File</button> -->
     <section class="addimage">
-      <form class="uploadedImg" action= "/profile/upload" method="POST" enctype="multipart/form-data">
+      <form class="uploadedImg column" action= "/profile/upload" method="POST" enctype="multipart/form-data">
         <input type="file" id="myFile" name="photo" accept="image/*">
+        <textarea name="caption" rows="4" cols="50"></textarea>
         <input type="submit" value="upload">
       </form>
     </section>
@@ -65,8 +69,7 @@
     </section>
   </section>
 
-    <script src="js/main.js"></script>
-  <!-- <script type="text/javascript" src="js/main.js"></script> -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>
