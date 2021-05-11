@@ -11,7 +11,7 @@ module.exports = {
     },
     createPost: async (req, res) => {
       try {
-        await Imgs.create({microsoftId: req.user.microsoftId, filename: req.file.filename, like: 0, liked: false, caption: req.body.caption})
+        await Imgs.create({microsoftId: req.user.microsoftId, filename: req.file.filename, like: 0, userLikes: [], caption: req.body.caption})
         if(req.file) {
           res.redirect("/profile")
         }
@@ -21,25 +21,27 @@ module.exports = {
     },
     updateLike: async (req, res)=>{
         let currentLike = Number(req.body.like)
-        let liked = await Imgs.findOne({_id:req.body.postIdFromJSFile})
-        if(liked.liked == false){
+        let hasLiked = await Imgs.findOne({_id:req.body.postIdFromJSFile})
+        if(await Imgs.find({ userLikes: { $in: [req.user.microsoftId] } }) == false){
           try{
               await Imgs.findOneAndUpdate({_id:req.body.postIdFromJSFile}, {
                 like: currentLike + 1,
-                liked: true
+                $push: {userLikes: req.user.microsoftId},
               })
               res.json('Added Like')  // This line is needed to update page - Indirectly Fixes a Type Error?
+              await Imgs.save();
           }catch(err){
               console.log(err)
           }
-        } else if(liked.liked == true) {
+        } else {
           let currentLike = Number(req.body.like)
           try{
               await Imgs.findOneAndUpdate({_id:req.body.postIdFromJSFile}, {
                 like: currentLike - 1,
-                liked: false
+                $pull: {userLikes: req.user.microsoftId},
               })
               res.json('Removed Like')  // This line is needed to update page - Indirectly Fixes a Type Error?
+              await Imgs.save()
           }catch(err){
               console.log(err)
           }
