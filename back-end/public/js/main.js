@@ -9,20 +9,6 @@ Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deletePost)
 })
 
-function setCaptionWidth() {
-  if(document.querySelectorAll(".caption")) {
-    const caption = document.querySelectorAll(".caption")
-    const imgSize = document.querySelector(".img-size")
-    setTimeout(function () {
-      Array.from(caption).forEach((el) => {
-        el.style.width = `${imgSize.clientWidth}px`
-      });
-    }, 1);
-  }
-}
-
-setCaptionWidth()
-
 
 async function updateLike(){
     const postId = this.parentNode.parentNode.dataset.id

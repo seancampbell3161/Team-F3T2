@@ -116,7 +116,9 @@ main {
   border-width: thick;
   border-radius: 3px;
 }
+.data {
 
+}
 .center {
   display: flex;
   justify-content: center;
@@ -134,7 +136,7 @@ img {
 }
 .caption {
   word-wrap: break-word;
-  padding: 0, 5rem;
+  margin: 0 6rem;
 }
 
 .post-controls {

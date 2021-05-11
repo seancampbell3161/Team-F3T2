@@ -126,7 +126,7 @@ img {
 }
 .caption {
   word-wrap: break-word;
-  padding: 0, 5rem;
+  padding: 0 6rem;
 }
 .uploadedImg input,
 .uploadedImg textarea {
