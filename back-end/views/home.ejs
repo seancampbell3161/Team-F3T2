@@ -29,7 +29,7 @@
             <div class="data center column" data-id="<%= el._id %>" data-like="<%= el.like %>">
               <img class="img-size" src="<%= "/uploads/images/" + el.filename %>" alt="">
               <% if(el.caption) { %>
-                <p class="caption"><%= el.caption %></p>
+                <pre class="caption"><%= el.caption %></pre>
               <% } %>
               <div class="post-controls">
                 <span>Likes: <%= el.like %></span>

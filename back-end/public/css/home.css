@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-*{
-  Font-size: 1em;
-  list-style: none;
-}
-
 /* .main-nav * {
   list-style:none;
 } */
@@ -32,7 +27,11 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-
+body {
+  font-size: 0.95rem;
+  list-style: none;
+  background-color: #ff8474;
+}
 
 header {
   height: 7vh;
@@ -171,8 +170,4 @@ h1{
   margin-top: 2rem;
   font-size: 3rem;
   color: #583d72;
-}
-
-body {
-  background-color: #ff8474;
 }
