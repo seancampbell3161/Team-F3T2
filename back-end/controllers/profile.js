@@ -1,4 +1,5 @@
 const Imgs = require("../models/imgs")
+const cloudinary = require("../middleware/cloudinary")
 
 module.exports = {
     getProfile: async (req,res)=>{
@@ -11,7 +12,17 @@ module.exports = {
     },
     createPost: async (req, res) => {
       try {
-        await Imgs.create({microsoftId: req.user.microsoftId, filename: req.file.filename, like: 0, userLikes: [], caption: req.body.caption})
+        const result = await cloudinary.uploader.upload(req.file.path);
+
+        await Imgs.create({
+          microsoftId: req.user.microsoftId,
+          filename: result.secure_url,
+          cloudinaryId: result.public_id,
+          like: 0,
+          userLikes: [],
+          caption: req.body.caption
+        });
+
         if(req.file) {
           res.redirect("/profile")
         }
@@ -46,6 +57,8 @@ module.exports = {
     },
     deletePost: async (req, res)=>{
         try{
+            let post = await Imgs.findById({ _id: req.body.postIdFromJSFile})
+            await cloudinary.uploader.destroy(post.cloudinaryId)
             await Imgs.findOneAndDelete({_id:req.body.postIdFromJSFile})
             res.redirect("/profile")
         }catch(err){

@@ -35,7 +35,7 @@
         <% if(imgs.length >= 1) { %>
           <% imgs.forEach( el => { %>
               <div class="data center column" data-id="<%= el._id %>" data-like="<%= el.like %>">
-                <img class="img-size" src="<%= "/uploads/images/" + el.filename %>" alt="">
+                <img class="img-size" src="<%= el.filename %>" alt="">
                 <% if(el.caption) { %>
                   <pre class="caption"><%= el.caption %></pre>
                 <% } %>
