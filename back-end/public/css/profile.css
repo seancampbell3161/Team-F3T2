@@ -6,10 +6,6 @@
 *{
   box-sizing: border-box;
 }
-*{
-  Font-size: 1em;
-  list-style: none;
-}
 /* .main-nav * {
   list-style:none;
 } */
@@ -30,6 +26,8 @@
 /* LAYOUT
 /*******************************************/
 body {
+  font-size: 0.95rem;
+  list-style: none;
   background-color: #ff8474;
 }
 header {
@@ -126,7 +124,7 @@ img {
 }
 .caption {
   word-wrap: break-word;
-  padding: 0, 5rem;
+  padding: 0 6rem;
 }
 .uploadedImg input,
 .uploadedImg textarea {

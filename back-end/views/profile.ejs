@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Profile</title>
+
+    <!-- external CSS link -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous"
+      />
     <link rel="stylesheet" type="text/css" href="css/profile.css" media="screen"/>
 </head>
 <header>
@@ -27,13 +35,13 @@
         <% if(imgs.length >= 1) { %>
           <% imgs.forEach( el => { %>
               <div class="data center column" data-id="<%= el._id %>" data-like="<%= el.like %>">
-                <img class="img-size" src="<%= "/uploads/images/" + el.filename %>" alt="">
+                <img class="img-size" src="<%= el.filename %>" alt="">
                 <% if(el.caption) { %>
-                  <p class="caption"><%= el.caption %></p>
+                  <pre class="caption"><%= el.caption %></pre>
                 <% } %>
                 <div class="post-controls">
                   <span>Likes: <%= el.like %></span>
-                  <button class="like" type="button"><3</button>
+                  <button class="like" type="button"><i class="fas fa-heart"></i></button>
                   <button class="del" type="button">Delete</button>
                 </div>
               </div>

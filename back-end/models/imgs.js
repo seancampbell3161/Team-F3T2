@@ -9,12 +9,16 @@ const ImgSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  cloudinaryId: {
+    type: String,
+    required: true,
+  },
   like: {
     type: Number,
     required: true,
   },
-  liked: {
-    type: Boolean,
+  userLikes: {
+    type: [String],
     required: true,
   },
   caption: {
